@@ -2,14 +2,14 @@ menu "P4 USB Webcam"
 
     config WEBCAM_WIFI_SSID
         string "Ev Wi-Fi adi (2.4 GHz)"
-        default "SUPERONLINE_Wi-Fi_0941"
+        default "Your SSID"
         help
             Bos birakirsan kart ilk acilista P4-Webcam kurulum agini acar.
             ESP32-C6 yalnizca 2.4 GHz aglara baglanir.
 
     config WEBCAM_WIFI_PASSWORD
         string "Ev Wi-Fi sifresi"
-        default "eYnJ84mLlJ"
+        default "Wifi Password"
         help
             Acik ag icin bos birak. WPA icin en az 8 karakter.
 
