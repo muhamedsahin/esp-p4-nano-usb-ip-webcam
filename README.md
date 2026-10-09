@@ -3,9 +3,9 @@
 Waveshare **ESP32-P4-NANO** kartına bağlanan standart bir USB UVC kamerayı, yerel ağdan erişilebilen bağımsız bir **MJPEG IP kameraya** dönüştüren gömülü sistem projesidir.
 
 <p align="center">
-  <img src="Ekran görüntüsü 2026-10-09 222039.png" alt="Drone IMU Flight Deck 3D web paneli" width="800">
+  <img src="Ekran görüntüsü 2026-10-09 222039.png" alt="Arayüz tasarımı" width="800">
   <br>
-  <em>Yerel ağdaki 3D web paneli: yönelim, ivme/gyro ölçümleri ve canlı grafik</em>
+  <em>Arayüz tasarımı</em>
 </p>
 
 USB kamera görüntüsü ESP32-P4 tarafından alınır, PSRAM üzerindeki düşük gecikmeli kare tamponuna aktarılır ve kartın üzerindeki ESP32-C6 Wi-Fi yardımcı işlemcisi aracılığıyla telefona, tablete veya bilgisayara yayınlanır. Canlı görüntüleme sayfası, stil dosyası ve JavaScript kodu doğrudan cihaz yazılımının içine gömülüdür; çalışması için Raspberry Pi, bilgisayar, bulut sunucusu veya ayrı bir uygulama gerekmez.
