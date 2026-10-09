@@ -1,0 +1,33 @@
+menu "P4 USB Webcam"
+
+    config WEBCAM_WIFI_SSID
+        string "Ev Wi-Fi adi (2.4 GHz)"
+        default "SUPERONLINE_Wi-Fi_0941"
+        help
+            Bos birakirsan kart ilk acilista P4-Webcam kurulum agini acar.
+            ESP32-C6 yalnizca 2.4 GHz aglara baglanir.
+
+    config WEBCAM_WIFI_PASSWORD
+        string "Ev Wi-Fi sifresi"
+        default "eYnJ84mLlJ"
+        help
+            Acik ag icin bos birak. WPA icin en az 8 karakter.
+
+    config WEBCAM_AP_PASSWORD
+        string "Kurulum agi sifresi"
+        default "p4webcam1"
+        help
+            En az 8 karakter. Kurulum aginin adi P4-Webcam olarak sabittir.
+
+    config WEBCAM_HTTP_PORT
+        int "Web portu"
+        default 80
+        range 1 65535
+
+    config WEBCAM_HOSTNAME
+        string "mDNS adi"
+        default "p4cam"
+        help
+            Tarayicida http://p4cam.local olarak acilir. Yalnizca harf ve rakam kullan.
+
+endmenu

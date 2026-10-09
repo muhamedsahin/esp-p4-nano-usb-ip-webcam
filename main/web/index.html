@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <title>P4 Webcam</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='11' fill='none' stroke='%23e6a23c' stroke-width='2'/%3E%3Ccircle cx='16' cy='16' r='4' fill='%23e6a23c'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="/app.css">
+</head>
+<body>
+  <div class="wrap">
+    <header class="top">
+      <div class="brand">
+        <svg viewBox="0 0 32 32" aria-hidden="true">
+          <circle cx="16" cy="16" r="11" fill="none" stroke="currentColor" stroke-width="1.6"></circle>
+          <circle cx="16" cy="16" r="4.5" fill="currentColor"></circle>
+        </svg>
+        <div>
+          <strong>P4 Webcam</strong>
+          <span>USB kamera · ev ağı</span>
+        </div>
+      </div>
+      <div class="head-meta">
+        <span id="ssid">bağlanıyor</span>
+        <span id="ip">—</span>
+      </div>
+    </header>
+
+    <p id="setup-banner" class="banner" hidden>
+      Telefonda kurulum ağındasın. Ev Wi-Fi adını aşağıya kaydedince kart o ağa geçer.
+      Görüntüyü şimdiden de izleyebilirsin.
+    </p>
+
+    <main>
+      <section class="stage" id="stage">
+        <span class="tick tl"></span>
+        <span class="tick tr"></span>
+        <span class="tick bl"></span>
+        <span class="tick br"></span>
+        <img id="view" alt="Canlı kamera görüntüsü" draggable="false">
+        <div id="placeholder" class="placeholder">
+          <div>
+            <b>P4 Nano</b>
+            <p>Bağlanıyor…</p>
+          </div>
+        </div>
+        <div class="hud">
+          <span class="live"><i id="dot" class="dot"></i> CANLI</span>
+          <span id="hud-res">—</span>
+          <span id="hud-fps">—</span>
+        </div>
+      </section>
+
+      <aside class="panel">
+        <section>
+          <h2>Çözünürlük</h2>
+          <div id="modes" class="chips">
+            <p class="empty">Kamera takılınca seçenekler burada belirir.</p>
+          </div>
+        </section>
+
+        <section>
+          <h2>Kare hızı</h2>
+          <div id="rates" class="chips">
+            <p class="empty">Çözünürlük seçilince dolar.</p>
+          </div>
+        </section>
+
+        <div class="actions">
+          <button type="button" id="toggle-play">Durdur</button>
+          <button type="button" id="full">Tam ekran</button>
+          <button type="button" id="shot">Fotoğraf kaydet</button>
+        </div>
+
+        <div class="stats">
+          <div class="stat"><b id="stat-fps">—</b><span>Kare</span></div>
+          <div class="stat"><b id="stat-rate">—</b><span>Akış</span></div>
+          <div class="stat"><b id="stat-viewers">0</b><span>İzleyici</span></div>
+          <div class="stat"><b id="stat-rssi">—</b><span id="stat-rssi-label">Sinyal</span></div>
+        </div>
+        <p id="hint" class="hint"></p>
+
+        <details id="net">
+          <summary>Ev ağını değiştir</summary>
+          <form id="wifi-form">
+            <label class="field">
+              <span>Yakındaki ağlar</span>
+              <span class="row">
+                <select id="scan"><option value="">Henüz taranmadı</option></select>
+                <button type="button" id="do-scan">Tara</button>
+              </span>
+            </label>
+            <label class="field">
+              <span>Ağ adı</span>
+              <input id="ssid-input" maxlength="32" autocomplete="off" required>
+            </label>
+            <label class="field">
+              <span>Şifre</span>
+              <span class="row">
+                <input id="pass" type="password" maxlength="63" autocomplete="off">
+                <button type="button" id="toggle-pass">Göster</button>
+              </span>
+            </label>
+            <button type="submit" class="primary">Kaydet ve bağlan</button>
+            <p id="note" class="note" aria-live="polite"></p>
+            <p class="fine">C6 yalnızca 2.4 GHz ağlara bağlanır. Kayıt kartın hafızasına yazılır.</p>
+          </form>
+        </details>
+      </aside>
+    </main>
+  </div>
+  <script src="/app.js"></script>
+</body>
+</html>

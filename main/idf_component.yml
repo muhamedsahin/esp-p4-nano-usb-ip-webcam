@@ -1,0 +1,14 @@
+# ESP32-P4-NANO bilesenleri.
+# Wi-Fi kartin kendi radyo biriminden degil, ustundeki ESP32-C6'dan gelir.
+dependencies:
+  idf: ">=5.4.0"
+  espressif/usb_host_uvc: "^2.5.1"
+  espressif/mdns: "*"
+  espressif/esp_wifi_remote:
+    version: "*"
+    rules:
+      - if: "target == esp32p4"
+  espressif/esp_hosted:
+    version: "*"
+    rules:
+      - if: "target == esp32p4"

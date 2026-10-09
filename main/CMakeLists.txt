@@ -1,0 +1,30 @@
+idf_component_register(
+    SRCS
+        "app_main.c"
+        "net/nvs_store.c"
+        "net/wifi_manager.c"
+        "camera/usb_camera.c"
+        "stream/frame_hub.c"
+        "stream/http_server.c"
+        "stream/http_api.c"
+    INCLUDE_DIRS
+        "."
+        "net"
+        "camera"
+        "stream"
+    EMBED_FILES
+        "web/index.html"
+        "web/app.css"
+        "web/app.js"
+    REQUIRES
+        nvs_flash
+        esp_wifi
+        esp_netif
+        esp_event
+        esp_http_server
+        esp_timer
+        mdns
+        usb
+        usb_host_uvc
+        heap
+)
